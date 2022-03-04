@@ -1,0 +1,137 @@
+{
+  "root": true,  // Do not search for eslint rules in parent directories
+  // https://eslint.org/docs/user-guide/configuring/language-options
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "ignorePatterns": [
+    "build/",
+    "dist/"
+  ],
+  "extends": [
+    "react-app",
+    "react-app/jest"
+  ],
+  "plugins": [
+    "react",
+    "react-hooks"
+  ],
+  // Rules that define (potentially) stupid or dangerous stuff
+  "rules": {
+    // React: https://github.com/yannickcr/eslint-plugin-react
+    "react/no-access-state-in-setstate": "error",
+    "react/no-children-prop": "error",
+    "react/no-danger": "error",
+    "react/no-deprecated": "warn",
+    "react/no-did-update-set-state": ["error", "disallow-in-func"],
+    "react/no-did-update-set-state": ["error", "disallow-in-func"],
+    "react/no-direct-mutation-state": "error",
+    "react/no-find-dom-node": "error",
+    "react/no-is-mounted": "error",
+    "react/no-namespace": "error",
+    "react/no-render-return-value": "error",
+    "react/no-string-refs": ["error", {"noTemplateLiterals": true}],
+    "react/no-this-in-sfc": "error",
+    "react/no-typos": "error",
+    "react/no-unescaped-entities": "error",
+    //"react/no-unknown-property": "error",
+    "react/no-unsafe": "error",
+    "react/no-unstable-nested-components": ["error", {"allowAsProps": true}],
+    "react/no-will-update-set-state": ["error","disallow-in-func"],
+    "react/prefer-es6-class": ["error", "always"],
+    //"react/prop-types": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/require-render-return": "error",
+    "react/jsx-key": ["error", {"checkKeyMustBeforeSpread": true}],
+    "react/jsx-no-comment-textnodes": "error",
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-no-target-blank": "error",
+    "react/jsx-no-undef": "error",
+    "react/jsx-pascal-case": "error",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+
+    // React hooks
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+
+    // Eslint: https://eslint.org/docs/rules/
+    // Possible Problems
+    "constructor-super": "error",
+    "for-direction":"error",
+    "getter-return":"error",
+    "no-async-promise-executor":"error",
+    "no-class-assign":"error",
+    "no-compare-neg-zero":"error",
+    "no-const-assign":"error",
+    "no-constant-condition":"off",
+    "no-constructor-return":"error",
+    "no-control-regex":"error",
+    "no-debugger":"error",
+    "no-dupe-args":"error",
+    "no-dupe-class-members":"error",
+    "no-dupe-else-if":"error",
+    "no-dupe-keys":"error",
+    "no-duplicate-case":"error",
+    "no-duplicate-imports":"off",
+    "no-empty-character-class":"error",
+    "no-empty-pattern":"error",
+    "no-ex-assign":"error",
+    "no-fallthrough":"error",
+    "no-func-assign":"error",
+    "no-import-assign":"error",
+    "no-inner-declarations":"off",
+    "no-invalid-regexp":"error",
+    "no-irregular-whitespace":"error",
+    "no-loss-of-precision":"error",
+    "no-misleading-character-class":"error",
+    "no-new-symbol":"error",
+    "no-obj-calls":"error",
+    "no-promise-executor-return":"error",
+    "no-prototype-builtins":"error",
+    "no-self-assign":"error",
+    "no-setter-return":"error",
+    "no-sparse-arrays":"error",
+    "no-template-curly-in-string":"warn",
+    "no-this-before-super":"error",
+    "no-undef":"error",
+    "no-unexpected-multiline":"error",
+    "no-unmodified-loop-condition":"off",
+    "no-unreachable":"error",
+    //"no-unreachable-loop":"error",
+    "no-unsafe-finally":"error",
+    "no-unsafe-negation":"error",
+    "no-unsafe-optional-chaining":"error",
+    "no-unused-private-class-members":"warn",
+    "no-unused-vars":"error",
+    "no-use-before-define":"error",
+    "no-useless-backreference":"error",
+    "require-atomic-updates":"error",
+    "use-isnan":"error",
+    "valid-typeof":"error",
+    // Suggestions
+    "consistent-return": "error",
+    "no-case-declarations": "error",
+    "no-console": "error",
+    "no-delete-var": "error",
+    "no-global-assign": "error",
+    "no-new": "error",
+    "no-octal": "error",
+    "no-octal-escape": "error",
+    "no-redeclare": "error",
+    "no-shadow-restricted-names": "error",
+    "no-undefined": "error",
+    "no-warning-comments": ["warn", {"terms": ["todo", "fixme", "debug"], "location": "start"}],
+    "no-with": "error",
+    "require-yield": "error"
+    // react:  https://github.com/yannickcr/eslint-plugin-react
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "react_frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@react-css/flex": "^1.6.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^6.2.2",
+    "react-scripts": "^5.0.0",
+    "redux": "^4.1.2",
+    "sass": "^1.49.9",
+    "utf8": "^3.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.3",
+    "@testing-library/user-event": "^13.5.0",
+    "cross-env": "^7.0.3",
+    "redux-devtools-extension": "^2.13.9"
+  },
+  "scripts": {
+    "dev": "cross-env BROWSER=none ESLINT_NO_DEV_ERRORS=true react-scripts start",
+    "devStrict": "cross-env BROWSER=none react-scripts start",
+    "build": "react-scripts build"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 2 chrome version",
+      "last 2 firefox version",
+      "last 2 safari version",
+      "Firefox ESR"
+    ]
+  },
+  "skipLibCheck": false
+}

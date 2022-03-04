@@ -1,0 +1,36 @@
+/* Reset margin */
+body {
+	margin: 0;
+}
+
+/* Font */
+html {
+	font-family: "Public Sans",sans-serif;
+}
+
+/* border-box */
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+/* Default colors */
+#react-app {
+	color: black;
+	background-color: white;
+}
+
+/* Fit all vertical space by default */
+html, body {
+	min-height: 100vh;
+}
+
+/* Avoid stupid problems with top-margin
+ * https://stackoverflow.com/questions/19718634/how-to-disable-margin-collapsing
+ */
+#react-app {
+	display: flex;
+	flex-direction: column;
+}
