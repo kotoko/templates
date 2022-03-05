@@ -6,7 +6,7 @@ import {Provider} from 'react-redux';
 import reducer from 'redux/reducer';
 
 
-const reduxDevtoolsExtension = isDev ? require('redux-devtools-extension') : null;
+const reduxDevtoolsExtension = isDev ? require('@redux-devtools/extension') : null;
 const store = isDev ? createStore(reducer, reduxDevtoolsExtension.devToolsEnhancer()) : createStore(reducer);
 
 
