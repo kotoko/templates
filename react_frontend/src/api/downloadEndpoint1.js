@@ -6,7 +6,7 @@ import {wrapperApi} from 'utils/api';
 
 
 export const downloadEndpoint1 = (setIsPending, dispatch) => wrapperApi(
-	() => fetchEndpoint1Api(),
+	fetchEndpoint1Api,
 	setIsPending,
 	(data) => {
 		const {abc} = data;

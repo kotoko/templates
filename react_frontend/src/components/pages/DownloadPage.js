@@ -1,14 +1,14 @@
 import React from 'react';
 
+import {downloadEndpoint2} from 'api/downloadEndpoint2';
 import {GoBackLink} from 'components/utils/GoBackLink';
-import {fetchEndpoint2Api} from 'utils/api';
+import {clearEndpoint2Action} from 'redux/actions/clearEndpoint2';
 import {setEndpoint2Action} from 'redux/actions/setEndpoint2';
 import {Title} from 'components/utils/Title';
 import {useDispatch} from 'react-redux';
 import {useEndpoint1Data} from 'hooks/useEndpoint1Data';
 import {useSelector} from 'react-redux';
 import {useState} from 'react';
-import {wrapperApi} from 'utils/api';
 
 
 const AutoDownload = ({isPending, value}) => (
@@ -29,9 +29,9 @@ const ManualDownload = ({value}) => {
 	const dispatch = useDispatch();
 
 	// Clicking download button
-	const onDownloadSuccess = (data) => {dispatch(setEndpoint2Action(data.def)); setResult('SUCCES')};
-	const onDownloadFailure = () => setResult('FAILURE');
-	const onDownload = () => {setResult(''); wrapperApi(fetchEndpoint2Api, setIsPending, onDownloadSuccess, onDownloadFailure);};
+	const onDownloadSuccess = (data) => {dispatch(setEndpoint2Action(data)); setResult('SUCCESS')};
+	const onDownloadFailure = () => {dispatch(clearEndpoint2Action()); setResult('FAILURE');};
+	const onDownload = () => downloadEndpoint2(setIsPending, onDownloadSuccess, onDownloadFailure);
 
 	return (
 		<>
@@ -43,7 +43,7 @@ const ManualDownload = ({value}) => {
 				<br />
 				value: {isPending ? '' : JSON.stringify(value)}
 			</p>
-			<p><button onClick={onDownload}>Download</button></p>
+			<p><button disabled={isPending} onClick={onDownload}>Download</button></p>
 		</>
 	);
 };
