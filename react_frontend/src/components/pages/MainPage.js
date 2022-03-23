@@ -4,6 +4,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {string2hex} from 'utils/utils';
 import {Title} from 'components/utils/Title';
+import {useCallback} from 'react';
 import {useEffect} from 'react';
 import {useState} from 'react';
 
@@ -33,7 +34,7 @@ const PassParameterSubpage = ({nr}) => {
 			<h2>{nr}. Parameter inside link (react-router + utf-8 escaping)</h2>
 			<p>You may want to pass parameters inside link (e.g. identificator of something). You can pass any text string via text box below. Try passing utf-8 characters or emojis.</p>
 			<p>
-				<textarea value={text} onChange={(e) => setText(e.target.value)} />
+				<textarea value={text} onChange={useCallback((e) => setText(e.target.value), [setText])} />
 				<br />
 				<Link to={url}>Show page with content passed trough link</Link>
 			</p>

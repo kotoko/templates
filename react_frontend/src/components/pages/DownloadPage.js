@@ -5,6 +5,7 @@ import {GoBackLink} from 'components/utils/GoBackLink';
 import {clearEndpoint2Action} from 'redux/actions/clearEndpoint2';
 import {setEndpoint2Action} from 'redux/actions/setEndpoint2';
 import {Title} from 'components/utils/Title';
+import {useCallback} from 'react';
 import {useDispatch} from 'react-redux';
 import {useEndpoint1Data} from 'hooks/useEndpoint1Data';
 import {useSelector} from 'react-redux';
@@ -29,9 +30,9 @@ const ManualDownload = ({value}) => {
 	const dispatch = useDispatch();
 
 	// Clicking download button
-	const onDownloadSuccess = (data) => {dispatch(setEndpoint2Action(data)); setResult('SUCCESS')};
-	const onDownloadFailure = () => {dispatch(clearEndpoint2Action()); setResult('FAILURE');};
-	const onDownload = () => downloadEndpoint2(setIsPending, onDownloadSuccess, onDownloadFailure);
+	const onDownloadSuccess = useCallback((data) => {dispatch(setEndpoint2Action(data)); setResult('SUCCESS')}, [dispatch, setResult]);
+	const onDownloadFailure = useCallback(() => {dispatch(clearEndpoint2Action()); setResult('FAILURE');}, [dispatch, setResult]);
+	const onDownload = useCallback(() => downloadEndpoint2(setIsPending, onDownloadSuccess, onDownloadFailure), [setIsPending, onDownloadSuccess, onDownloadFailure]);
 
 	return (
 		<>
